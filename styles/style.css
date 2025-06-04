@@ -1,0 +1,239 @@
+
+:root {
+  --primary: #8a470c;   /* tomato red */
+  --secondary: #525b0f; /* olive */
+  --accent: #f0e68c;    /* wheat */
+  --light: #f9f9f9;
+  --dark: #303030;
+}
+
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+/* Header Bar */
+header {
+  background-color: var(--accent);
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* Ingredient Form Layout */
+#ingredient-form {
+  max-width: 500px;
+  margin: 1rem auto;
+  background: white;
+  padding: 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+}
+
+#ingredient-form input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#ingredient-form button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+#ingredient-form button:hover {
+  background-color: #733807;
+}
+
+/* Ingredient List */
+#ingredient-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+#ingredient-list li {
+  background: var(--accent);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Results Section */
+#results {
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+/* Result Category Containers */
+#results > div {
+  background: white;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#results h2 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+/* Result Cards */
+#results div > div {
+  display: inline-block;
+  width: 220px;
+  margin: 0.5rem;
+  text-align: center;
+  vertical-align: top;
+  background: var(--light);
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#results img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+/* YouTube iframe container */
+iframe {
+  margin-top: 0.5rem;
+  border: none;
+}
+
+.recipe-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-link:hover {
+  background-color: var(--secondary);
+}
+
+.recipe-card {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 1rem;
+  text-align: center;
+}
+
+/* Media Queries for Desktop */
+@media (min-width: 700px) {
+  #ingredient-form,
+  #results {
+    padding: 2rem;
+  }
+
+  #ingredient-form button {
+    width: auto;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+
+  #ingredient-form form {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+/* HEADER */
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--secondary);
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Centering recipe cards inside results sections */
+#results > div {
+  text-align: center;
+}
+
+#results div > div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0.5rem;
+  width: 220px;
+  text-align: center;
+}

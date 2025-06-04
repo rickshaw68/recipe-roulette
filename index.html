@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Roulette</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    
+</head>
+<header>
+  <div class="brand">Recipe Roulette</div>
+  <nav>
+    <a href="#">Login</a>
+    <a href="#">Signup</a>
+  </nav>
+</header>
+
+<body>
+    <h1>Welcome to Recipe Roulette</h1>
+    <section id="ingredient-form">
+        <h2>Enter Ingredients You Have</h2>
+        <form id="add-ingredient-form">
+            <input type="text" id="ingredient-input" placeholder="e.g., tomato" required />
+            <button type="submit">Add</button>
+        </form>
+        <ul id="ingredient-list"></ul>
+        <button id="search-btn">Search Recipes</button>        
+    </section>
+    <main id="results"></main>
+  <script type="module" src="/scripts/main.js"></script>
+</body>
+<footer>
+  <p>
+    &copy; 2025 Recipe Roulette | Rick Shaw
+    <a href="#">About</a> |
+    <a href="#">Contact</a>
+  </p>
+</footer>
+
+</html>
