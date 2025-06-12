@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Favorite Recipes</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <script type="module" src="/scripts/favorites.mjs" defer></script>
+    <script type="module" src="/scripts/navigation.js" defer></script>
+</head>
+<header>
+    <div class="brand">Recipe Roulette</div>
+    <button id="hamburger-menu" aria-label="Toggle Navigation"></button>
+  </header>
+<body>
+  <nav id="animateme">
+    <ul class="menuLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="favorites.html" class="active">Favorites</a></li>
+        <li><a href="grocery.html">Grocery List</a></li>      
+    </nav>
+
+  <main id="favorites-page">
+    <h1>My Favorite Recipes</h1>
+    <div id="favorites-container">
+      <!-- Favorite recipes will be loaded here -->
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2025 Recipe Roulette | Rick Shaw
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </p>
+  </footer>
+</body>
+</html>

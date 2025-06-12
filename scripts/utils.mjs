@@ -1,7 +1,11 @@
-export function saveIngredients(ingredientList) {
-    localStorage.setItem("recipe-ingredients", JSON.stringify(ingredientList));
+export function loadIngredients() {
+  return JSON.parse(localStorage.getItem("ingredients")) || [];
 }
 
-export function loadIngredients() {
-    return JSON.parse(localStorage.getItem("recipe-ingredients")) || [];
+export function saveIngredients(ingredientArray) {
+  if (!ingredientArray || ingredientArray.length === 0) {
+    localStorage.removeItem("ingredients"); // Clear the storage if the array is empty
+  } else {
+    localStorage.setItem("ingredients", JSON.stringify(ingredientArray));
+  }
 }

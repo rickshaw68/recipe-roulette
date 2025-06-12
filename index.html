@@ -1,40 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Roulette</title>
-    <link rel="stylesheet" href="/styles/style.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Roulette</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+  <audio id="spin-sound" src="/sounds/spin.mp3" preload="auto"></audio>
 </head>
-<header>
-  <div class="brand">Recipe Roulette</div>
-  <nav>
-    <a href="#">Login</a>
-    <a href="#">Signup</a>
-  </nav>
-</header>
 
 <body>
-    <h1>Welcome to Recipe Roulette</h1>
-    <section id="ingredient-form">
-        <h2>Enter Ingredients You Have</h2>
-        <form id="add-ingredient-form">
-            <input type="text" id="ingredient-input" placeholder="e.g., tomato" required />
-            <button type="submit">Add</button>
-        </form>
-        <ul id="ingredient-list"></ul>
-        <button id="search-btn">Search Recipes</button>        
-    </section>
-    <main id="results"></main>
-  <script type="module" src="/scripts/main.js"></script>
-</body>
-<footer>
-  <p>
-    &copy; 2025 Recipe Roulette | Rick Shaw
-    <a href="#">About</a> |
-    <a href="#">Contact</a>
-  </p>
-</footer>
 
+  <a href="#results" class="sr-only sr-skip">Skip to main content</a>
+  
+  <header>
+    <div class="brand">Recipe Roulette</div>
+    <button id="hamburger-menu" aria-label="Toggle Navigation"></button>
+  </header>
+
+  <nav id="animateme">
+    <ul class="menuLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="favorites.html">Favorites</a></li>
+      <li><a href="grocery.html">Grocery List</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Signup</a></li>
+    </ul>
+  </nav>
+
+  <h1>Welcome to Recipe Roulette</h1>
+
+  <!-- Ingredient Form -->
+  <section id="ingredient-form">
+    <h2>Enter Ingredients You Have</h2>
+    <form id="add-ingredient-form">
+      <label for="ingredient-input" class="sr-only">Ingredient Name</label>
+      <input type="text" id="ingredient-input" placeholder="e.g., tomato" required />
+      <button type="submit">Add</button>
+    </form>
+    <ul id="ingredient-list"></ul>
+    <button id="clear-ingredients">Clear Ingredients</button>
+    <button id="clear-all">Clear All</button>
+    <button id="search-btn">Search Recipes</button>
+  </section>
+
+<section id="filters">
+  <h2>Filters</h2>
+  <div class="filter-group">
+    <label for="diet-filter">
+      Diet:
+      <select id="diet-filter">
+        <option value="">Any</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="vegan">Vegan</option>
+        <option value="gluten free">Gluten Free</option>
+        <option value="ketogenic">Ketogenic</option>
+      </select>
+    </label>
+
+    <label for="cuisine-filter">
+      Cuisine:
+      <select id="cuisine-filter">
+        <option value="">Any</option>
+        <option value="italian">Italian</option>
+        <option value="mexican">Mexican</option>
+        <option value="thai">Thai</option>
+        <option value="indian">Indian</option>
+      </select>
+    </label>
+
+    <label for="time-filter">
+      Max Time:
+      <select id="time-filter">
+        <option value="">Any</option>
+        <option value="15">15 minutes</option>
+        <option value="30">30 minutes</option>
+        <option value="60">60 minutes</option>
+      </select>
+    </label>
+  </div>
+</section>
+
+  <!-- Results Container -->
+  <main id="results"></main>    
+
+  <!-- Recipe Roulette Section -->
+  <section id="roulette-section" style="text-align: center; margin: 2rem auto;">
+    <button id="spin-recipe-btn" class="roulette-btn">🎰 Spin for a Recipe!</button>
+    <p id="spin-message" aria-live="polite" role="status" style="color: red; font-weight: bold; margin-top: 1rem;"></p>
+    <div id="spinner-wrapper" style="position: relative; width: 180px; margin: 2rem auto;">
+      <div id="pointer" style="
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 20px solid var(--primary);">
+      </div>
+      <div id="spinner" class="spinner-wheel"></div>
+    </div>
+    <div id="roulette-result" class="recipe-card"></div>
+  </section>
+
+
+
+  <footer>
+    <p>
+      &copy; 2025 Recipe Roulette | Rick Shaw
+      <a href="#">About</a> |
+      <a href="#">Contact</a>
+    </p>
+  </footer>
+
+  <script type="module" src="/scripts/main.js"></script>
+  <script type="module" src="/scripts/navigation.js"></script>
+
+</body>
 </html>

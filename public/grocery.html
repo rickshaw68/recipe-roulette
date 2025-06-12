@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grocery List</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+  <script type="module" src="/scripts/groceryList.mjs" defer></script>
+  <script type="module" src="/scripts/navigation.js" defer></script>
+</head>
+<header>
+    <div class="brand">Recipe Roulette</div>
+    <button id="hamburger-menu" aria-label="Toggle Navigation"></button>
+</header>
+<body>
+    <nav id="animateme">
+    <ul class="menuLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+        <li><a href="recipe.html">Recipe</a></li>
+        <li><a href="grocery.html" class="active">Grocery List</a></li>    
+    </nav>   
+
+    <main role="main">
+        <section id="grocery-section">
+        <h2>Grocery List</h2>
+        <form onsubmit="return false;">
+        <input type="text" id="grocery-input" placeholder="Add grocery item..." />
+        <div id="grocery-buttons">
+            <button id="print-grocery" class="favorite-button" type="button">🖨 Print Grocery List</button>
+            <button id="add-item" type="button">Add</button>
+            <button id="clear-list" type="button">Clear All</button>
+        </div>
+        </form>
+
+        <ul id="grocery-list"></ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Recipe Roulette | Rick Shaw</p>
+    </footer>
+</body>
+</html>
