@@ -543,6 +543,22 @@ header .brand {
   font-weight: bold;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  gap: 0.5rem; 
+}
+
+.logo-image {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
 /* Navigation Menu */
 nav {
   background-color: var(--nav-background-color);
@@ -726,8 +742,14 @@ footer a:hover {
 } 
 
   header span {
-      font-size: 2rem;
+      font-size: 3rem;
   }
+
+  .logo-image {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
 
   nav {
     max-height: none;
