@@ -5,15 +5,24 @@ import { searchYouTubeVideos } from './api/youtube.mjs';
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("recipeDetails.mjs loaded");
 
+  // Store the selected recipe in localStorage for future reference
   const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-  const source = params.get("source");
+  let id = params.get("id");
+  let source = params.get("source");
   const detailSection = document.getElementById("recipe-details");
 
+  // try to recover last recipe from localStorage if nothing is passed in the URL
   if (!id || !source) {
-    detailSection.innerHTML = "<p>Error: ❌ Invalid recipe link. Please go back and try again.</p>";
-    return;
+    const stored = JSON.parse(localStorage.getItem("selectedRecipe"));
+    if (stored?.id && stored?.source) {
+      id = stored.id;
+      source = stored.source;
+    } else {
+      detailSection.innerHTML = "<p>Error: ❌ Invalid recipe link. Please go back and try again.</p>";
+      return;
+    }
   }
+
 
   try {
     // Handle YouTube videos 
@@ -99,6 +108,7 @@ detailSection.innerHTML = `
     ? `<p><strong>Instructions:</strong></p><div class="instructions">${recipe.instructions}</div>`
     : `<p><a href="${recipe.url}" target="_blank">View Full Instructions</a></p>`}
 `; 
+    localStorage.setItem("selectedRecipe", JSON.stringify({ id, source }));
 
     // create the button wrapper for styling (side by side buttons on larger screens)
     detailSection.appendChild(document.createElement("hr")); // add a horizontal line for separation   
