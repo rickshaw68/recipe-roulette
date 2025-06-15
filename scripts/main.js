@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     saveIngredients([]);
     list.innerHTML = "";
     // commenting out the localStorage clear to keep previous results due to API limitations
-    localStorage.removeItem("spoonacularResults"); 
-    localStorage.removeItem("edamamResults");
-    localStorage.removeItem("youtubeResults");
-    localStorage.removeItem("lastQuery");
+    //localStorage.removeItem("spoonacularResults"); 
+    //localStorage.removeItem("edamamResults");
+    //localStorage.removeItem("youtubeResults");
+    //localStorage.removeItem("lastQuery");
     localStorage.removeItem("filters");
     document.getElementById("results").innerHTML = "";
     document.getElementById("diet-filter").value = "";
