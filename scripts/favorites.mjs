@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     card.innerHTML = `
       <img src="${recipe.image}" alt="${recipe.title}" />
       <h3>${recipe.title}</h3>
-      <a href="recipe.html?id=${recipe.id}&source=${recipe.source}" class="recipe-link">View Recipe</a>
+      <a href="recipe.html?id=${encodeURIComponent(recipe.id)}&source=${recipe.source}" class="recipe-link">View Recipe</a>
       <button class="remove-button" data-id="${recipe.id}" data-source="${recipe.source}">🗑 Remove</button>
     `;
 

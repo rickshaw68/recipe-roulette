@@ -193,7 +193,14 @@ detailSection.innerHTML = `
 
   // Back button
   const backButton = document.createElement("button");
-  backButton.textContent = "← Back to Search Results";
+  if (document.referrer.includes("favorites")) {
+    backButton.textContent = "← Back to Favorites";
+  } else if (document.referrer.includes("index")) {
+    backButton.textContent = "← Back to Search Results";
+  } else {
+    backButton.textContent = "← Back";
+  }
+
   backButton.classList.add("back-button");
   backButton.onclick = () => {
     window.history.back();
