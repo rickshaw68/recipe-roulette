@@ -51,6 +51,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
       }
 
+      // ✅ Ensure recipe.image is always populated
+      if (!recipe.image) {
+        if (source === "spoonacular") {
+          recipe.image = `https://spoonacular.com/recipeImages/${id}-556x370.jpg`;
+        } else if (source === "edamam") {
+          recipe.image = recipe.images?.LARGE?.url || recipe.images?.REGULAR?.url || recipe.images?.THUMBNAIL?.url;
+        }
+      }
+
+      // Fallback placeholder if still undefined
+      recipe.image = recipe.image || 'images/placeholder.png';
+
+
       const ingredients = recipe.ingredients || recipe.ingredientLines || [];
 
       let nutritionHTML = "";
