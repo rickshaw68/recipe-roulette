@@ -741,6 +741,15 @@ footer a:hover {
   }
 }
 
+.recipe-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+
 /* Media Query for Larger Screens */
 @media (min-width: 600px) { 
   header {
